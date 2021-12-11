@@ -1,0 +1,94 @@
+
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/NiceBBMBThai12/NBTScript/main/UI%20LUA%20%3A%20Porn%20HUB"))() -- cal the lib
+local a = library:NewWindow("NBT","HUB") -- Change to anything
+local g = a:NewSection("Main")
+g:Text("|:--- Cart Ride Into Rdite! ---:|",'http://www.roblox.com/asset/?id=6394116489')
+g:Toggle("Speed+ All Carts",function(g)
+speedup = g
+while speedup do
+    wait()
+    for i,part in pairs(game:GetService("Workspace").Carts:GetDescendants()) do
+        if part.Name == "Up" then
+            fireclickdetector(part.Click)
+        end
+    end
+end
+end)
+g:Toggle("Speed- All Carts",function(g)
+speeddown = g
+while speeddown do
+    wait()
+    for i,part in pairs(game:GetService("Workspace").Carts:GetDescendants()) do
+        if part.Name == "Down" then
+            fireclickdetector(part.Click)
+        end
+    end
+end
+end)
+g:Toggle("Spawn Carts All",function(Value)
+        _G.Destroys = (Value)
+        while _G.Destroys do
+        wait()
+        for i,v in pairs(game.Workspace.Carts:GetChildren()) do
+               fireclickdetector(v.Click)
+            end
+         end
+end)
+g:Toggle("Loop Start/Stop Carts All",function(g)
+loopstartstop = g
+        while loopstartstop do
+            wait()
+        for i,v in pairs(game.Workspace.hey:GetChildren()) do
+               fireclickdetector(v.On.Click)
+            end
+        end
+end)
+g:Toggle("Bring all Carts",function(b)
+bingitem = b
+while bingitem do
+wait(0.5)
+       game:GetService('RunService').Stepped:Connect(function()
+                                       setsimulationradius(1e308, 1/0)
+   end)
+   for _,part in pairs(game:GetService("Workspace"):GetDescendants()) do
+if game.Players.LocalPlayer.Character:FindFirstChild('Head') and part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false and not part:IsDescendantOf(game.Players.LocalPlayer.Character) and part.Name == "Torso" == false and part.Name == "Head" == false and part.Name == "Right Arm" == false and part.Name == "Left Arm" == false and part.Name == "Right Leg" == false and part.Name == "Left Leg" == false and part.Name == "HumanoidRootPart" == false then
+local ForceInstance = Instance.new("BodyPosition")
+for i,c in pairs(part:GetChildren()) do
+if c:IsA("BodyPosition") or c:IsA("BodyGyro") then
+c:Destroy()
+end
+end
+ForceInstance.Parent = part
+ForceInstance.MaxForce = Vector3.new(math.huge, math.huge, math.huge
+)ForceInstance.Position = game.Players.LocalPlayer.Character.Head.Position
+end
+end
+end
+end)
+g:Button("Max Zoom",function(f)
+while wait() do
+game.Players.LocalPlayer.CameraMaxZoomDistance = 9223372036854718
+end
+end)
+g:Button("Rejoin & ReFunction",function()
+local ts = game:GetService("TeleportService")
+local p = game:GetService("Players").LocalPlayer
+ 
+ts:Teleport(game.PlaceId, p)
+end)
+g:Button("Leave Game",function()
+game:shutdown()
+end)
+local c = a:NewSection("Credit")
+local text1 = c:Text("-----------------|-|-----------------")
+local text2 = c:Text("---------------YouTube--------------")
+local text3 = c:Text("-----------------|-|-----------------")
+local log = true  
+c:Button("Copy Link YouTube",function()
+text2:Refresh("-------------SUCCEEDED-------------")
+wait()
+setclipboard("https://www.youtube.com/channel/UCfgJP6rm-aN7zifxfyk6A-A")
+wait(1)
+text2:Refresh("---------------YouTube--------------")
+end)
+c:h1("END")

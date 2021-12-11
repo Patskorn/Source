@@ -1,0 +1,3 @@
+while wait() do
+game.Players.LocalPlayer.CameraMaxZoomDistance = 9223372036854718
+end

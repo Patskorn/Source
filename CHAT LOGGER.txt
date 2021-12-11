@@ -1,0 +1,26 @@
+getgenv().Option = "RConsole" -- Options are "RConsole" and "Notification"
+
+function rconsole(Text)
+   rconsoleprint("@@WHITE@@")
+   rconsoleprint(Text)
+end
+
+if (getgenv().Option == "RConsole") then
+   rconsolename("Chat Logger")
+end
+
+for i, v in pairs(game.Players:GetPlayers()) do
+   v.Chatted:Connect(function(Message)
+       if (getgenv().Option == "RConsole") then
+           
+           rconsole(v.Name .. ": " .. Message)
+           rconsole("\n")
+       elseif (getgenv().Option == "Notification") then
+           game.StarterGui:SetCore("SendNotification", {
+               Title = "Chat Logger",
+               Text = v.Name .. ": " .. Message,
+               Duration = math.huge,
+           })
+       end
+   end)
+end

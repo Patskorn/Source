@@ -1,0 +1,1 @@
+setfpscap(1000)

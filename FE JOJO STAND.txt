@@ -1,0 +1,19 @@
+getgenv().settings =  {
+  ['Stand'] =1357534742, --userid of the stand
+  ['Owner'] =310013433, -- userid of the jojo stand owner
+}
+getgenv().commands =  {
+   ['Summon'] = "sum", -- if someone else wants to own the stand.
+   ['Follow'] = "fol", -- follow/unfollow you
+   ['Ghost'] = "disapp", -- disappear
+   ['Unghost'] = "app", -- appear
+   ['Attack'] = "ora", -- loop attack a target
+   ['Stopattack'] = "stopora", -- stop attacking the target
+   ['Void'] = "void", -- send the target to the void when ko (goes with attack)
+   ['Godmode'] = "Re", -- enable/disable godmode
+   ['Autosave'] = "save", -- grab you when k.o
+   ['Autosave2'] = "bira", -- send you in the air when k.o
+   ['Reset'] = "stop", -- resets commands and character (debug)
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/racemodex/my-scripts/master/dahoodjojostand-v3rmversion", true))()

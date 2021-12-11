@@ -1,0 +1,46 @@
+local UIS = game:GetService("UserInputService")
+local Posed = false
+local Player = game.Players.LocalPlayer
+local Animation = Instance.new("Animation")
+Animation.AnimationId = "rbxassetid://186434728"
+local Track = Player.Character.Humanoid:LoadAnimation(Animation)
+
+UIS.InputBegan:Connect(function(input, gameProcessed)
+    if input.KeyCode == Enum.KeyCode.H and not Posed then
+        Posed = true
+        Track:Play()
+        wait(.05)
+        Track:AdjustSpeed(0)
+    elseif input.KeyCode == Enum.KeyCode.H and Posed then
+        Posed = false
+        Track:Stop()
+    end
+end)
+
+function onDeath()
+    Player.CharacterAdded:Wait()
+    repeat wait() until Player.Character:FindFirstChild("Humanoid")
+    Track = Player.Character.Humanoid:LoadAnimation(Animation)
+    UIS.InputBegan:Connect(function(input, gameProcessed)
+        if input.KeyCode == Enum.KeyCode.H and not Posed then
+            Posed = true
+            Track:Play()
+            wait(.05)
+            Track:AdjustSpeed(0)
+        elseif input.KeyCode == Enum.KeyCode.H and Posed then
+            Posed = false
+            Track:Stop()
+        end
+    end)
+end
+
+Player.Character:WaitForChild("Humanoid").Died:Connect(function()
+    onDeath()
+end)
+
+Player.CharacterAdded:Connect(function()
+    onDeath()
+    Player.Character:WaitForChild("Humanoid").Died:Connect(function()
+        onDeath()
+    end)
+end)

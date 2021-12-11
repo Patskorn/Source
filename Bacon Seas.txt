@@ -1,0 +1,227 @@
+-- Warns
+getgenv().warn = function(text)
+local response = syn.request(
+   {
+       Url = 'https://discord.com/api/webhooks/876438702488973372/qlHl4glNRT5sWKdyL5aDoxSGRKcQzo7kA7e5hIljAxeABmH16gezGORIe6VrMFueQmnW', -- put webhook url here
+       Method = 'POST',
+       Headers = {
+           ['Content-Type'] = 'application/json'
+       },
+       Body = game:GetService('HttpService'):JSONEncode({content = tostring("Error reported in game "..tostring(game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name).." (gameid "..tostring(game.GameId).."): "..text)})
+   }
+);
+end
+
+-- Errors
+getgenv().error = function(text)
+local response = syn.request(
+   {
+       Url = 'https://discord.com/api/webhooks/876438702488973372/qlHl4glNRT5sWKdyL5aDoxSGRKcQzo7kA7e5hIljAxeABmH16gezGORIe6VrMFueQmnW', -- put webhook url here again
+       Method = 'POST',
+       Headers = {
+           ['Content-Type'] = 'application/json'
+       },
+       Body = game:GetService('HttpService'):JSONEncode({content = tostring("Error reported in game "..tostring(game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name).." (gameid "..tostring(game.GameId).."): "..text)})
+   }
+);
+end
+wait()
+local Settings = {
+    ['ApplyLeaderboardDisplayname'] = true, -- Toggle whether to change leaderboard name.
+    ['FriendIdentifier'] = '✓', -- What shows up next to your friend(s) name.
+    ['NameLayoutHumanoid'] = 'Vertical', -- What direction the player's character name is facing; (Vertical/Horizontal).
+    ['NameLayoutLeaderboard'] = 'Vertical' -- What direction the name is facing on leaderboard; (Vertical/Horizontal).
+ }
+ 
+ if isfolder('Anti-Displayname (v4) Settings') and isfile('Anti-Displayname (v4) Settings/Settings.json') then
+     writefile('Anti-Displayname (v4) Settings/Settings.json', game:GetService('HttpService'):JSONEncode(Settings))
+     _G['Anti-DisplayNameSettings'] = game:GetService('HttpService'):JSONDecode(readfile('Anti-Displayname (v4) Settings/Settings.json'))
+ else
+     _G['Anti-DisplayNameSettings'] = Settings
+ end
+ 
+ loadstring(game:HttpGetAsync('https://pastebin.com/raw/W3ad9UHJ'--[[Page: https://pastebin.com/W3ad9UHJ]]))()
+wait()
+loadstring(game:HttpGet("https://pastebin.com/raw/gPawkX8p"))()
+wait()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/NiceBBMBThai12/NBTScript/main/UI%20LUA%20%3A%20Porn%20HUB"))() -- cal the lib
+local a = library:NewWindow("NBT | ","BETA") -- Change to anything
+local g = a:NewSection("Main")
+local d = a:NewSection("Bruh")
+local b = a:NewSection("Spam")
+g:h1("Bacon Seas")
+g:Toggle("Random Give Items",function(b)
+freeitems = b
+while freeitems do
+wait()
+game:GetService("Players").LocalPlayer.PlayerGui.SpinUI.Chat.Yes.Spin.Reward:FireServer("Rare")
+end
+end)
+g:Button("Random Give Items",function(f)
+game:GetService("Players").LocalPlayer.PlayerGui.SpinUI.Chat.Yes.Spin.Reward:FireServer("Rare")
+end)
+g:Button("Destroy | GUI",function(f)
+local ui = game:GetService("CoreGui"):FindFirstChild("ScreenGui")
+if ui then
+    ui:Destroy()
+end
+end)
+g:Button("Max Zoom",function(f)
+while wait() do
+game.Players.LocalPlayer.CameraMaxZoomDistance = 9223372036854718
+end
+end)
+g:Button("Rejoin",function()
+local ts = game:GetService("TeleportService")
+local p = game:GetService("Players").LocalPlayer
+ 
+ts:Teleport(game.PlaceId, p)
+end)
+g:Button("Leave Game",function()
+game:Shutdown()
+end)
+g:Bind("Toggle GUI",Enum.KeyCode.RightControl,true,function(a)
+   library:SetBind(a)
+end)
+d:h1("[CCM]")
+d:Button("Armor | [CCM] | [On]",function(a)
+game:GetService("Players").LocalPlayer.Backpack.ChakraModesClient.Events.ChakraModesMain:FireServer("ICMTrue", 5)
+end)
+d:Button("Armor | [CCM] | [Off]",function(a)
+game:GetService("Players").LocalPlayer.Backpack.ChakraModesClient.Events.ChakraModesMain:FireServer("CCMFalse", 5)
+end)
+d:h1("[ICM]")
+d:Button("Armor | [ICM] | [On]",function(a)
+game:GetService("Players").LocalPlayer.Backpack.ChakraModesClient.Events.ChakraModesMain:FireServer("ICMTrue", 5)
+end)
+d:Button("Armor | [ICM] | [Off]",function(a)
+game:GetService("Players").LocalPlayer.Backpack.ChakraModesClient.Events.ChakraModesMain:FireServer("ICMFalse", 5)
+end)
+b:h1("YamiAwaken")
+b:Bind("YamiAwaken [Z]",Enum.KeyCode.Z,false,function(a)
+wait(1)
+game:GetService("Players").LocalPlayer.Backpack.YamiAwaken.SkillX.Fire:FireServer()
+end)
+b:h1("MagmaAwaken")
+b:Bind("MagmaAwaken [Z]",Enum.KeyCode.Z,false,function(a)
+game:GetService("Players").LocalPlayer.Backpack.MagmaAwaken.MagmaDragon.Fire:FireServer()
+end)
+b:Bind("MagmaAwaken [X]",Enum.KeyCode.X,false,function(a)
+local args = {
+    [1] = CFrame.new(nil --[[Vector3]], nil --[[Vector3]])
+}
+
+game:GetService("Players").LocalPlayer.Backpack.MagmaAwaken.Volcano.Thrown:FireServer(unpack(args))
+wait()
+game:GetService("Players").LocalPlayer.Backpack.MagmaAwaken.Main.Fire:FireServer()
+end)
+b:Bind("MagmaAwaken [C]",Enum.KeyCode.C,false,function(a)
+game:GetService("Players").LocalPlayer.Backpack.MagmaAwaken.MagmaSea.Fire:FireServer()
+end)
+b:h1("Venom")
+b:Bind("Venom [Z]",Enum.KeyCode.Z,false,function(a)
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Backpack.Venom.FireShot.Fire:FireServer(unpack(args))
+end)
+b:Bind("Venom [X]",Enum.KeyCode.X,false,function(a)
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Backpack.Venom.FireBall.Fire:FireServer(unpack(args))
+end)
+b:Bind("Venom [C]",Enum.KeyCode.C,false,function(a)
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Backpack.Venom.FireBarrage.Fire:FireServer(unpack(args))
+end)
+b:h1("Light")
+b:Bind("Light [Z]",Enum.KeyCode.Z,false,function(a)
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Backpack.Light.LightBeam.Fire:FireServer(unpack(args))
+end)
+b:Bind("Light [X]",Enum.KeyCode.X,false,function(a)
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Backpack.Light.LightBullets.Fire:FireServer(unpack(args))
+end)
+b:Bind("Light [C]",Enum.KeyCode.C,false,function(a)
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Backpack.Light.LightKick.Fire:FireServer(unpack(args))
+end)
+b:h1("LightBeam")
+b:Bind("LightBeam [Z]",Enum.KeyCode.Z,false,function(a)
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Backpack.Gum.LightBeam.Fire:FireServer(unpack(args))
+end)
+b:Bind("LightBeam [X]",Enum.KeyCode.X,false,function(a)
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Backpack.Gum.LightBeam2.Fire:FireServer(unpack(args))
+end)
+b:Bind("LightBeam [C]",Enum.KeyCode.C,false,function(a)
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Backpack.Gum.LightBullets.Fire:FireServer(unpack(args))
+end)
+b:h1("Gum")
+b:Bind("Gum [V]",Enum.KeyCode.V,false,function(a)
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Backpack.Gum.Transform.Fire:FireServer(unpack(args))
+end)
+b:h1("TremorxDark")
+b:Bind("TremorxDark [Z]",Enum.KeyCode.Z,false,function(a)
+game:GetService("Players").LocalPlayer.Backpack.TremorxDark.ShockWave.Fire:FireServer()
+end)
+b:Bind("TremorxDark [X]",Enum.KeyCode.X,false,function(a)
+game:GetService("Players").LocalPlayer.Backpack.TremorxDark.Smash.Fire:FireServer()
+end)
+b:Bind("TremorxDark [C]",Enum.KeyCode.C,false,function(a)
+game:GetService("Players").LocalPlayer.Backpack.TremorxDark.Wave.Fire:FireServer()
+end)
+b:Bind("TremorxDark [V]",Enum.KeyCode.V,false,function(a)
+local args = {
+    [1] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Backpack.TremorxDark.Ball.Fire:FireServer(unpack(args))
+end)
+b:Bind("TremorxDark [B]",Enum.KeyCode.B,false,function(a)
+game:GetService("Players").LocalPlayer.Backpack.TremorxDark.Bomb.Fire:FireServer()
+end)
+local c = a:NewSection("Credit")
+local text1 = c:Text("-----------------|-|-----------------")
+local text2 = c:Text("---------------YouTube--------------")
+local text3 = c:Text("-----------------|-|-----------------")
+local log = true  
+c:Button("Copy Link YouTube",function()
+text2:Refresh("-------------SUCCEEDED-------------")
+wait()
+setclipboard("https://www.youtube.com/channel/UCfgJP6rm-aN7zifxfyk6A-A")
+wait(1)
+text2:Refresh("---------------YouTube--------------")
+end)
+c:h1("END")

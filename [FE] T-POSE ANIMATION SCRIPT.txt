@@ -1,0 +1,18 @@
+local UIS = game:GetService("UserInputService")
+local Posed = false
+local Player = game.Players.LocalPlayer
+local Animation = Instance.new("Animation")
+Animation.AnimationId = "rbxassetid://243999792"
+local Track = Player.Character:WaitForChild("Humanoid"):LoadAnimation(Animation)
+
+UIS.InputBegan:Connect(function(input, gameProcessed)
+   if input.KeyCode == Enum.KeyCode.T and not Posed then
+       Posed = true
+       Track:Play()
+       wait(.5)
+       Track:AdjustSpeed(0)
+   elseif input.KeyCode == Enum.KeyCode.T and Posed then
+       Posed = false
+       Track:Stop()
+   end
+end)
