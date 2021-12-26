@@ -11,7 +11,7 @@ end
 
 local Flux = loadstring(game:HttpGet"https://pastebin.com/raw/XLCrin0T")()
 
-local win = Flux:Window("ไม่มีชื่อ HUB", "BLOX FRUIT", Color3.fromRGB(50,216,249), Enum.KeyCode.RightControl)
+local win = Flux:Window("CNP HUB", "BLOX FRUIT", Color3.fromRGB(50,216,249), Enum.KeyCode.RightControl)
 local tgls = win:Tab("Auto Farm", "")
 local VirtualUser = game:GetService("VirtualUser")
 Firstsea = false
